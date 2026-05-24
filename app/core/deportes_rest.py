@@ -12,3 +12,4 @@ def lista_deportes():
 @app.get("/lista-candidatos-deporte/{nombre}")
 def lista_candidatos_deporte(nombre: str):
     return service.lista_candidatos_deporte(nombre)
+

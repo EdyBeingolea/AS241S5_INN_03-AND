@@ -1,15 +1,11 @@
 from app.models.candidatos_model import Candidatos
 from app.models.deportes_model import Deportes
-from pathlib import Path
-import sys
 import pandas as pd
 import numpy as np
-sys.path.append(str(Path(__file__).resolve().parents[2]))
 
+ruta_data = "https://docs.google.com/spreadsheets/d/1FuZV6MM_B1O50IbZig92IBkCk44jU3Dnx6vF42OgaRA/export?format=csv&gid=210583738"
 
-ruta_data = r"data/processed/decan_0.csv"
-
-data_frame = pd.read_csv(ruta_data, encoding="latin1", sep=";")
+data_frame = pd.read_csv(ruta_data)
 
 nombres_deporte = data_frame['DISCIPLINA DEPORTIVA'].value_counts()
 
@@ -42,3 +38,5 @@ def lista_candidatos_deporte(deporte: str):
         candidatos.agregar_candidatos(nombre, int(total_candidatos))
 
     return candidatos.obtener_lista()
+
+

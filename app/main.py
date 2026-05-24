@@ -1,4 +1,5 @@
 from app.core.deportes_rest import app
+from app.core.candidato_rest import app
 import uvicorn
 
 
