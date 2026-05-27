@@ -1,4 +1,4 @@
-from app.models.candidatos_model import Candidatos
+from app.models.candidatos_model import CandidatoLista
 from app.models.deportes_model import Deportes
 import pandas as pd
 import numpy as np
@@ -23,7 +23,7 @@ def lista_nombres_deporte():
 
 def lista_candidatos_deporte(deporte: str):
 
-    candidatos = Candidatos()
+    candidatos = CandidatoLista()
     deporte_escojido = data_frame.query(
          "`DISCIPLINA DEPORTIVA` == @deporte"
     )
